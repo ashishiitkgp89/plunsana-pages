@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathwork Experience | Plunsana</title>
+    <meta name="description" content="Experience the transformative power of breathwork at Plunsana. Our sessions enhance mental clarity, promote relaxation, and support emotional release.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-color: #2E1F47;
+            --secondary-gradient-start: #8B314C;
+            --secondary-gradient-end: #50284D;
+            --accent-color: #C2D3FF;
+            --neutral-beige: #F5F5DC;
+            --neutral-beige-dark: #e6e6c8;
+            --neutral-dark: #333333;
+
+            /* Secondary Colors */
+            --neutral-100: #FFFFFF;
+            --neutral-200: #F8F9FA;
+            --neutral-300: #E9ECEF;
+            --neutral-400: #DEE2E6;
+            --neutral-700: rgba(51, 51, 51, 0.9);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.16);
+            --shadow-xl: 0 12px 24px rgba(0,0,0,0.2);
+            --shadow-inner: inset 0 2px 4px rgba(0,0,0,0.06);
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;   /* 4px */
+            --spacing-sm: 0.5rem;    /* 8px */
+            --spacing-md: 1rem;      /* 16px */
+            --spacing-lg: 1.5rem;    /* 24px */
+            --spacing-xl: 2rem;      /* 32px */
+            --spacing-2xl: 3rem;     /* 48px */
+            --spacing-3xl: 4rem;     /* 64px */
+            --spacing-4xl: 6rem;     /* 96px */
+            --spacing-5xl: 8rem;     /* 128px */
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;   /* 6px */
+            --radius-md: 0.5rem;     /* 8px */
+            --radius-lg: 1rem;       /* 16px */
+            --radius-xl: 1.5rem;     /* 24px */
+
+            /* New colors */
+            --accent-glow: rgba(194, 211, 255, 0.15);
+            --overlay-dark: rgba(46, 31, 71, 0.7);
+            --overlay-light: rgba(255, 255, 255, 0.05);
+            
+            /* Cold Plunge Specific Colors */
+            --cold-plunge-blue: #1e90ff;
+            --cold-plunge-teal: #20b2aa;
+            --cold-plunge-gradient: linear-gradient(135deg, #1e90ff 0%, #20b2aa 100%);
+            
+            /* Breathwork Specific Colors */
+            --breathwork-primary: #6B8E23;
+            --breathwork-secondary: #98FB98;
+            --breathwork-gradient-start: #6B8E23;
+            --breathwork-gradient-end: #98FB98;
+            --breathwork-accent: #8FBC8F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--neutral-dark);
+            background-color: var(--neutral-100);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-4xl);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* Hero Section - Full Bleed */
+        .hero-section {
+            position: relative;
+            padding: 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            color: var(--neutral-beige);
+            overflow: hidden;
+            margin-top: 90px;
+            background-image: url('https://res.cloudinary.com/dcfv2aml6/image/upload/v1743962908/breathwork-3_cfuu21.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(80, 40, 77, 0.65) 0%,
+                rgba(46, 31, 71, 0.6) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 650px;
+            padding: var(--spacing-2xl);
+        }
+        
+        .hero-content h1 {
+            font-size: 3.8rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-lg);
+            text-transform: uppercase;
+            color: var(--neutral-100);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content .highlight {
+            display: inline-block;
+            color: var(--neutral-100);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                rgba(194, 211, 255, 0) 0%,
+                rgba(194, 211, 255, 0.7) 50%,
+                rgba(194, 211, 255, 0) 100%);
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-xl);
+            opacity: 0.95;
+            color: var(--neutral-100);
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            max-width: 540px;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(to right, 
+                #2E3B5B 0%,
+                #566991 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 12px rgba(46, 31, 71, 0.4);
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(46, 31, 71, 0.5);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--spacing-5xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(46, 31, 71, 0) 0%,
+                rgba(46, 31, 71, 0.1) 50%,
+                rgba(46, 31, 71, 0) 100%);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--spacing-2xl);
+            color: var(--neutral-dark);
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* Journey Section */
+        .journey-section {
+            padding: var(--spacing-5xl) 0;
+            background: linear-gradient(135deg, var(--neutral-100) 0%, var(--neutral-200) 100%);
+            position: relative;
+        }
+
+        .journey-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(46, 31, 71, 0) 0%,
+                rgba(46, 31, 71, 0.1) 50%,
+                rgba(46, 31, 71, 0) 100%);
+        }
+
+        .journey-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-xl);
+            position: relative;
+        }
+
+        .journey-grid::after {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 50px;
+            right: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, 
+                #1e90ff 0%,
+                #20b2aa 100%);
+            z-index: 0;
+            border-radius: 4px;
+        }
+
+        .journey-card {
+            background: var(--neutral-100);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(46, 31, 71, 0.1);
+        }
+
+        .journey-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .journey-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, 
+                #1e90ff 0%,
+                #20b2aa 100%);
+            color: var(--neutral-100);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto var(--spacing-lg);
+            box-shadow: 0 4px 10px rgba(46, 31, 71, 0.3);
+        }
+
+        .journey-card h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-md);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .journey-card p {
+            color: var(--neutral-dark);
+            opacity: 0.85;
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: var(--spacing-3xl) 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://res.cloudinary.com/dcfv2aml6/image/upload/v1743962908/breathwork-2_cm9xsz.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--neutral-beige);
+            text-align: center;
+            position: relative;
+        }
+
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right,
+                rgba(30, 144, 255, 0.25) 0%,
+                rgba(30, 144, 255, 0) 70%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-2xl);
+            position: relative;
+            z-index: 1;
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center,
+                rgba(194, 211, 255, 0.1) 0%,
+                rgba(194, 211, 255, 0) 50%);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-item:hover::before {
+            transform: rotate(225deg);
+        }
+
+        .benefit-item h3 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .benefit-item p {
+            color: var(--neutral-beige);
+            opacity: 0.95;
+            font-size: 1rem;
+            line-height: 1.75;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Emotional Release Section */
+        .emotional-release-section {
+            padding: var(--spacing-4xl) var(--spacing-2xl);
+            background: var(--neutral-100);
+            position: relative;
+        }
+
+        .emotional-release-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: var(--spacing-3xl);
+            align-items: center;
+        }
+
+        .emotional-release-image {
+            flex: 1;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .emotional-release-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .emotional-release-content {
+            flex: 1;
+        }
+
+        .emotional-release-content h2 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.2;
+        }
+
+        .emotional-release-content p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: var(--neutral-700);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        @media (max-width: 768px) {
+            .emotional-release-section .container {
+                flex-direction: column;
+            }
+            
+            .emotional-release-content h2 {
+                font-size: 2.5rem;
+            }
+        }
+
+        .show-more-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, 
+                #2E3B5B 0%,
+                #566991 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-top: var(--spacing-lg);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .show-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(46, 31, 71, 0.2);
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(46, 31, 71, 0.98) 0%, rgba(80, 40, 77, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            padding: var(--spacing-md) 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) var(--spacing-4xl);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: var(--spacing-xl);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--neutral-beige);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+            color: var(--neutral-beige);
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neutral-beige);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Active link styles */
+        .nav-link.active {
+            opacity: 1;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--neutral-100);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-color);
+            color: var(--neutral-beige);
+            padding: var(--spacing-4xl) 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-3xl);
+        }
+
+        .footer-section h4 {
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.25rem;
+        }
+
+        .footer-section p {
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-section a {
+            color: var(--neutral-beige);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-3xl);
+            margin-top: var(--spacing-3xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Booking Banner */
+        .booking-banner {
+            background: var(--secondary-gradient-start);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+        }
+
+        .booking-banner a {
+            color: white;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+        
+        .booking-banner + .header {
+            top: 36px;
+        }
+        
+        /* Button Styles */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md) var(--spacing-2xl);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--neutral-100);
+            background: linear-gradient(to right, 
+                #2E3B5B 0%,
+                #566991 100%);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .fade-in-scale {
+            opacity: 0;
+            animation: fadeInScale 0.6s ease forwards;
+        }
+
+        /* Add animation delays for cascade effect */
+        .journey-grid > *:nth-child(1) { animation-delay: 0.1s; }
+        .journey-grid > *:nth-child(2) { animation-delay: 0.2s; }
+        .journey-grid > *:nth-child(3) { animation-delay: 0.3s; }
+        .journey-grid > *:nth-child(4) { animation-delay: 0.4s; }
+
+        .benefits-grid > *:nth-child(1) { animation-delay: 0.1s; }
+        .benefits-grid > *:nth-child(2) { animation-delay: 0.2s; }
+        .benefits-grid > *:nth-child(3) { animation-delay: 0.3s; }
+        .benefits-grid > *:nth-child(4) { animation-delay: 0.4s; }
+        .benefits-grid > *:nth-child(5) { animation-delay: 0.5s; }
+        .benefits-grid > *:nth-child(6) { animation-delay: 0.6s; }
+        .benefits-grid > *:nth-child(7) { animation-delay: 0.7s; }
+        .benefits-grid > *:nth-child(8) { animation-delay: 0.8s; }
+
+        /* Responsive Design */
+        @media (max-width: 1400px) {
+            .container {
+                max-width: 1140px;
+            }
+            
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 4rem;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+                padding: 0 var(--spacing-3xl);
+            }
+            
+            .hero-content h1 {
+                font-size: 2.75rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            blockquote {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                max-width: 720px;
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .journey-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .journey-grid::after {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3.25rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-2xl);
+            }
+
+            .hero-content {
+                padding: var(--spacing-2xl) var(--spacing-xl);
+            }
+            
+            .header-container {
+                padding: var(--spacing-sm) var(--spacing-xl);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--primary-color);
+                width: 80%;
+                height: calc(100vh - 80px);
+                padding: var(--spacing-xl);
+                transition: right 0.3s ease;
+                gap: var(--spacing-xl);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+            }
+
+            .journey-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            blockquote {
+                font-size: 1.75rem;
+                padding: var(--spacing-2xl) var(--spacing-xl);
+            }
+
+            .hero-content h1 {
+                font-size: 2.25rem;
+            }
+            
+            .hero-content .highlight {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .journey-card, .benefit-item {
+                transform: none !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 var(--spacing-xl);
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .hero-content .highlight {
+                font-size: 2.5rem;
+            }
+
+            blockquote {
+                font-size: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(90deg, 
+                rgba(46, 31, 71, 0.9) 0%,
+                rgba(139, 49, 76, 0.85) 100%);
+            position: relative;
+            overflow: hidden;
+            color: var(--neutral-100);
+            padding: var(--spacing-5xl) 0;
+            text-align: center;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center,
+                rgba(30, 144, 255, 0.1) 0%,
+                rgba(30, 144, 255, 0) 70%);
+        }
+
+        .quote-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-section .cta-content {
+            margin-top: var(--spacing-3xl);
+        }
+
+        .quote-section .cta-title {
+            font-size: 2.5rem;
+            color: var(--neutral-100);
+            margin-bottom: var(--spacing-md);
+            font-weight: 600;
+        }
+
+        .quote-section .cta-subtitle {
+            font-size: 1.125rem;
+            color: var(--neutral-100);
+            opacity: 0.9;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .quote-section .cta-button {
+            margin: 0 auto;
+            display: inline-flex;
+        }
+
+        blockquote {
+            position: relative;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--neutral-100);
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--spacing-2xl) var(--spacing-2xl);
+            line-height: 1.4;
+        }
+
+        blockquote footer {
+            font-size: 1.25rem;
+            margin-top: var(--spacing-xl);
+            opacity: 0.8;
+            font-style: normal;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Booking Banner -->
+    <div class="booking-banner">
+        CLICK HERE TO BOOK YOUR VISIT <a href="#book">Schedule Now</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="https://plunsana.com/wp-content/uploads/2025/02/P-white-icon.png" alt="Plunsana Logo">
+            </a>
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="#" class="nav-link has-dropdown active">Services</a>
+                <a href="/memberships" class="nav-link">Memberships</a>
+                <a href="/events" class="nav-link">Events</a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>
+                    GET THE <span class="highlight">MENTAL CLARITY</span> YOU NEED
+                </h1>
+                <p>Breathwork sessions at Plunsana are designed to enhance mental clarity, guiding participants through exercises that clear the mind and improve focus. By consciously controlling your breathing, you can access a state of heightened awareness, allowing for a deeper connection with your inner self.</p>
+                <a href="#book" class="hero-cta">SCHEDULE YOUR SESSION</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="journey-section">
+        <div class="container">
+            <h2 class="section-title">A 4-Step Journey to Inner Peace and Vitality</h2>
+            <div class="journey-grid">
+                <div class="journey-card fade-in">
+                    <div class="journey-number">1</div>
+                    <h3>Awareness</h3>
+                    <p>Awareness is the foundation of Breathwork. Start by finding a quiet, comfortable space where you can sit or lie down without interruptions. Close your eyes and bring your attention to your natural breathing pattern. Notice the rhythm, depth, and sensations of each breath without trying to change anything. This initial awareness is crucial for connecting with your inner self and preparing for a deeper Breathwork practice.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <div class="journey-number">2</div>
+                    <h3>Diaphragmatic Breathing</h3>
+                    <p>Diaphragmatic Breathing involves breathing deeply into the belly rather than shallow breathing into the chest. Place one hand on your abdomen and the other on your chest. As you inhale, focus on expanding your belly, feeling your hand rise, and minimizing the movement in your chest. This technique enhances oxygen exchange and activates the body's relaxation response, setting the stage for a transformative Breathwork session.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <div class="journey-number">3</div>
+                    <h3>Controlled Breathing</h3>
+                    <p>Controlled Breathing is the practice of consciously altering your breath pattern. After mastering diaphragmatic breathing, experiment with varying the length of your inhales and exhales. A common method is the 4-7-8 technique: inhale for 4 seconds, hold for 7 seconds, and exhale for 8 seconds. Controlled breathing can help regulate the nervous system, reduce stress, and improve focus.</p>
+                </div>
+                <div class="journey-card fade-in">
+                    <div class="journey-number">4</div>
+                    <h3>Visualization</h3>
+                    <p>Visualization enhances the Breathwork experience by engaging the mind. As you continue with controlled breathing, visualize a wave of relaxation sweeping through your body with each exhale, or imagine exhaling stress and inhaling calm. This step combines the power of the mind with the physiological benefits of Breathwork, deepening the sense of relaxation and peace.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emotional Release Section -->
+    <section class="emotional-release-section">
+        <div class="container">
+            <div class="emotional-release-image">
+                <img src="https://res.cloudinary.com/dcfv2aml6/image/upload/v1743962907/breathwork-1_uuoxkk.jpg" alt="Emotional Release through Breathwork at Plunsana">
+            </div>
+            <div class="emotional-release-content">
+                <h2>Emotional Release with Our Therapies</h2>
+                <p>Emotional release through Breathwork is a transformative process that taps into the depths of our being, allowing us to confront and release emotions that have been stored in our bodies, sometimes for years. This journey towards emotional freedom is not just about letting go of the negative but embracing a fuller spectrum of our emotional landscape, which includes joy, peace, and a newfound sense of empowerment.</p>
+                <p>Breathwork serves as a bridge between the conscious and subconscious mind, providing a pathway for emotions that have been suppressed or unacknowledged to surface in a controlled and safe environment. As you engage in deep, rhythmic breathing, your body begins to relax, and your mind becomes more receptive to the healing process. This state of vulnerability is where the magic happens—emotions, memories, and sensations that have been locked away find their way out, offering a unique opportunity for introspection and understanding.</p>
+                <p>The beauty of Breathwork for emotional release lies in its simplicity and the immediate sense of relief it can bring. Participants often report experiencing a significant emotional catharsis during or after a session, which can manifest as tears, laughter, or a profound sense of calm. This emotional purging is a crucial step towards healing, as it not only liberates you from the past burdens but also clears the way for new energies and experiences.</p>
+                <button class="show-more-btn" onclick="toggleMoreContent()">Show More</button>
+                <div id="more-content" style="display: none;">
+                    <p>Moreover, Breathwork fosters a deeper connection with oneself. By paying attention to the breath and the body's responses, individuals develop a greater awareness of their emotional triggers and patterns. This awareness is empowering, equipping participants with the tools to manage their emotional wellbeing proactively.</p>
+                    <p>Guided Breathwork sessions at Plunsana are tailored to support individuals through their emotional release journey. Our experienced facilitators create a supportive and non-judgmental space where participants can explore their emotions without fear of criticism or embarrassment. These sessions are often accompanied by music, guided imagery, or other therapeutic techniques to enhance the experience and facilitate deeper healing.</p>
+                    <p>In addition to group sessions, Plunsana encourages the practice of Breathwork as a regular self-care routine. Incorporating Breathwork into your daily life can help maintain emotional balance, reduce stress, and improve overall mental health. Whether it's starting the day with a few minutes of deep breathing or using Breathwork as a tool to navigate stressful situations, the benefits of this practice extend far beyond the sessions themselves.</p>
+                    <p>Emotional release through Breathwork is a journey back to oneself. It's an invitation to shed the layers of emotional baggage that we carry and embrace a lighter, more authentic existence. At Plunsana, we are committed to guiding you through this journey, offering the tools and support needed to unlock the miraculous power of healing within. Join us, and embark on a transformative journey that promises not just emotional release but a renewed sense of life itself.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--neutral-beige);">Transformative Benefits of Breathwork for Mind, Body, and Spirit</h2>
+            <p class="section-subtitle" style="color: var(--neutral-beige); opacity: 0.9;">Unlocking Wellness Through the Power of Breath</p>
+            <div class="benefits-grid">
+                <div class="benefit-item fade-in">
+                    <h3>Mental Clarity</h3>
+                    <p>Enhances mental clarity and focus through controlled breathing.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Deep Relaxation</h3>
+                    <p>Promotes deep relaxation and reduces symptoms of stress.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Emotional Release</h3>
+                    <p>Encourages emotional release and helps process pent-up feelings.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Energy Boost</h3>
+                    <p>Increases energy levels and revitalizes the body.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Detoxification</h3>
+                    <p>Supports detoxification processes through increased oxygenation.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Anxiety Management</h3>
+                    <p>Helps in managing anxiety and depression by regulating the nervous system.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Mindfulness</h3>
+                    <p>Fosters mindfulness and enhances present-moment awareness.</p>
+                </div>
+                <div class="benefit-item fade-in">
+                    <h3>Sleep Improvement</h3>
+                    <p>Can improve sleep quality by promoting relaxation before bedtime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section section">
+        <div class="container">
+            <blockquote class="fade-in">
+                "Cold is a stressor, so if you can get into the cold and control your body's response to it, you will be able to control stress."
+                <footer>– WIM HOF</footer>
+            </blockquote>
+            <div class="cta-content fade-in">
+                <h2 class="cta-title">Ready to Experience the Benefits?</h2>
+                <p class="cta-subtitle">Book your Breathwork session today and start your wellness journey</p>
+                <a href="#book" class="cta-button">
+                    <span>SCHEDULE YOUR VISIT</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Info</h4>
+                    <p><strong>Email:</strong> info@plunsana.com</p>
+                    <p><strong>Phone:</strong> 727.405.8853</p>
+                    <p><strong>Location:</strong> 2300 26th St N. St. Petersburg FL.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p><strong>Monday – Friday</strong><br>
+                    7 AM – 1 PM | 5 PM – 8 PM</p>
+                    <p><strong>Saturday & Sunday</strong><br>
+                    8 AM – 1 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/guided-classes">Guided Classes</a></li>
+                        <li><a href="/private-sessions">Private Sessions</a></li>
+                        <li><a href="/sauna">Sauna</a></li>
+                        <li><a href="/cold-plunge">Cold Plunge</a></li>
+                        <li><a href="/breathwork" class="active">Breathwork</a></li>
+                        <li><a href="/red-light-therapy">Red Light Therapy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 Plunsana – Sauna • Cold Plunge • Breathwork | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add necessary JavaScript for mobile menu and show more functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                });
+            });
+        });
+        
+        function toggleMoreContent() {
+            const moreContent = document.getElementById('more-content');
+            const showMoreBtn = document.querySelector('.show-more-btn');
+            
+            if (moreContent.style.display === 'none') {
+                moreContent.style.display = 'block';
+                showMoreBtn.textContent = 'Show Less';
+            } else {
+                moreContent.style.display = 'none';
+                showMoreBtn.textContent = 'Show More';
+            }
+        }
+    </script>
+</body>
+</html> 

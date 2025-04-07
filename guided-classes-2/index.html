@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guided Classes Version 2 | Plunsana</title>
+    <meta name="description" content="Experience expert-led guided classes at Plunsana. Our guided experiences version 2 for sauna, cold plunge, and breathwork are designed to maximize benefits and enhance your wellness journey.">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            /* Primary Colors */
+            --primary-color: #2E1F47;
+            --secondary-gradient-start: #8B314C;
+            --secondary-gradient-end: #50284D;
+            --accent-color: #C2D3FF;
+            --neutral-beige: #F5F5DC;
+            --neutral-beige-dark: #e6e6c8;
+            --neutral-dark: #333333;
+
+            /* Secondary Colors */
+            --neutral-100: #FFFFFF;
+            --neutral-200: #F8F9FA;
+            --neutral-300: #E9ECEF;
+            --neutral-400: #DEE2E6;
+            --neutral-700: rgba(51, 51, 51, 0.9);
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.12);
+            --shadow-lg: 0 8px 16px rgba(0,0,0,0.16);
+            --shadow-xl: 0 12px 24px rgba(0,0,0,0.2);
+            --shadow-inner: inset 0 2px 4px rgba(0,0,0,0.06);
+            
+            /* Spacing */
+            --spacing-xs: 0.25rem;   /* 4px */
+            --spacing-sm: 0.5rem;    /* 8px */
+            --spacing-md: 1rem;      /* 16px */
+            --spacing-lg: 1.5rem;    /* 24px */
+            --spacing-xl: 2rem;      /* 32px */
+            --spacing-2xl: 3rem;     /* 48px */
+            --spacing-3xl: 4rem;     /* 64px */
+            --spacing-4xl: 6rem;     /* 96px */
+            --spacing-5xl: 8rem;     /* 128px */
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;   /* 6px */
+            --radius-md: 0.5rem;     /* 8px */
+            --radius-lg: 1rem;       /* 16px */
+            --radius-xl: 1.5rem;     /* 24px */
+
+            /* New colors */
+            --accent-glow: rgba(194, 211, 255, 0.15);
+            --overlay-dark: rgba(46, 31, 71, 0.7);
+            --overlay-light: rgba(255, 255, 255, 0.05);
+            
+            /* Cold Plunge Specific Colors */
+            --cold-plunge-blue: #1e90ff;
+            --cold-plunge-teal: #20b2aa;
+            --cold-plunge-gradient: linear-gradient(135deg, #1e90ff 0%, #20b2aa 100%);
+            
+            /* Guided Classes Specific Colors */
+            --guided-primary: #1e90ff;
+            --guided-secondary: #20b2aa;
+            --guided-gradient-start: #1e90ff;
+            --guided-gradient-end: #20b2aa;
+            --guided-accent: var(--accent-color);
+            
+            /* Booking Plugin Colors */
+            --booking-border: rgba(46, 31, 71, 0.1);
+            --booking-active: #2E3B5B;
+            --booking-hover: rgba(46, 31, 71, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.75;
+            color: var(--neutral-dark);
+            background-color: var(--neutral-100);
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-4xl);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        /* Hero Section - Full Bleed */
+        .hero-section {
+            position: relative;
+            padding: 0;
+            min-height: 90vh;
+            display: flex;
+            align-items: flex-start;
+            color: var(--neutral-beige);
+            overflow: hidden;
+            margin-top: 90px;
+            background-image: url('https://res.cloudinary.com/dcfv2aml6/image/upload/v1743966881/Plunsana_group_session_m1eoel.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, 
+                rgba(46, 31, 71, 0.8) 0%,
+                rgba(139, 49, 76, 0.75) 100%);
+            z-index: 1;
+        }
+
+        .hero-section .container {
+            display: block;
+            padding-top: 160px;
+            padding-bottom: 80px;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            margin-left: 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: var(--spacing-lg);
+            text-transform: uppercase;
+            color: var(--neutral-100);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-content .highlight {
+            display: inline;
+            color: var(--neutral-100);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            position: relative;
+            font-weight: 700;
+        }
+
+        .hero-content .highlight::after {
+            display: none;
+        }
+        
+        .hero-content p {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-xl);
+            opacity: 1;
+            color: var(--neutral-100);
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+            max-width: 650px;
+            font-weight: 400;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: #2E3B5B;
+            border-radius: 2px;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            text-transform: uppercase;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+        }
+
+        /* Booking Plugin Styles */
+        .booking-plugin {
+            flex: 1;
+            min-width: 320px;
+            max-width: 550px;
+            background-color: var(--neutral-beige);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: var(--shadow-xl);
+            color: var(--primary-color);
+            position: relative;
+            z-index: 5;
+            border: 1px solid rgba(46, 31, 71, 0.1);
+        }
+        
+        .booking-container {
+            padding: var(--spacing-md);
+        }
+        
+        .booking-plugin h2 {
+            text-align: center;
+            margin-bottom: var(--spacing-md);
+            font-size: 1.75rem;
+            color: var(--primary-color);
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+        
+        .booking-subtitle {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.1rem;
+            color: var(--neutral-dark);
+            font-weight: 500;
+        }
+        
+        .booking-steps {
+            display: flex;
+            justify-content: center;
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+        }
+        
+        .booking-steps::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 70%;
+            height: 2px;
+            background-color: var(--neutral-400);
+            transform: translate(-50%, -50%);
+            z-index: 0;
+        }
+        
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--neutral-200);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 var(--spacing-md);
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            border: 2px solid var(--neutral-400);
+            transition: all 0.3s ease;
+        }
+        
+        .step.active {
+            background-color: var(--booking-active);
+            color: white;
+            border-color: var(--booking-active);
+            transform: scale(1.05);
+        }
+        
+        .booking-options {
+            margin-top: var(--spacing-xl);
+            border-top: 1px solid var(--booking-border);
+        }
+        
+        .booking-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-md) var(--spacing-md);
+            border-bottom: 1px solid var(--booking-border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: var(--radius-sm);
+        }
+        
+        .booking-option:hover {
+            background-color: var(--booking-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .option-detail h3 {
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .option-price {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--booking-active);
+            background-color: rgba(46, 31, 71, 0.05);
+            padding: 4px 10px;
+            border-radius: 4px;
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: var(--spacing-5xl) 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                rgba(46, 31, 71, 0) 0%,
+                rgba(46, 31, 71, 0.1) 50%,
+                rgba(46, 31, 71, 0) 100%);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--spacing-2xl);
+            color: var(--neutral-dark);
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, rgba(46, 31, 71, 0.98) 0%, rgba(80, 40, 77, 0.98) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            padding: var(--spacing-md) 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) var(--spacing-4xl);
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: auto;
+            height: auto;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: var(--spacing-xl);
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-link {
+            color: var(--neutral-beige);
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+            color: var(--neutral-beige);
+        }
+        
+        /* Mobile menu styles */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--neutral-beige);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Active link styles */
+        .nav-link.active {
+            opacity: 1;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--neutral-100);
+        }
+
+        /* Booking Banner */
+        .booking-banner {
+            background: var(--secondary-gradient-start);
+            color: white;
+            text-align: center;
+            padding: 8px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1001;
+        }
+
+        .booking-banner a {
+            color: white;
+            text-decoration: underline;
+            margin-left: 5px;
+        }
+        
+        .booking-banner + .header {
+            top: 36px;
+        }
+
+        /* Offerings Section */
+        .offerings-section {
+            background: var(--neutral-200);
+            padding: var(--spacing-5xl) 0;
+        }
+
+        .offerings-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-3xl);
+        }
+
+        .offering-card {
+            background: var(--neutral-100);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .offering-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .offering-image {
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .offering-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .offering-card:hover .offering-image img {
+            transform: scale(1.05);
+        }
+
+        .offering-content {
+            padding: var(--spacing-xl);
+        }
+
+        .offering-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-md);
+            color: var(--primary-color);
+        }
+
+        .offering-content p {
+            color: var(--neutral-dark);
+            margin-bottom: var(--spacing-lg);
+            opacity: 0.9;
+        }
+
+        .offering-price {
+            font-weight: 600;
+            color: var(--primary-color);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            display: block;
+        }
+
+        .offering-btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(to right, 
+                #2E3B5B 0%,
+                #566991 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .offering-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Benefits Section */
+        .benefits-section {
+            padding: var(--spacing-3xl) 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url('https://res.cloudinary.com/dcfv2aml6/image/upload/v1743970008/guided_classes_evmyti.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--neutral-beige);
+            text-align: center;
+            position: relative;
+        }
+        
+        .benefits-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at top right,
+                rgba(194, 211, 255, 0.25) 0%,
+                rgba(194, 211, 255, 0) 70%);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--spacing-2xl);
+            position: relative;
+            z-index: 1;
+            margin-top: var(--spacing-3xl);
+        }
+
+        .benefit-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .benefit-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center,
+                rgba(194, 211, 255, 0.1) 0%,
+                rgba(194, 211, 255, 0) 50%);
+            transform: rotate(45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .benefit-item:hover::before {
+            transform: rotate(225deg);
+        }
+
+        .benefit-item h3 {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+            margin-bottom: var(--spacing-md);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        .benefit-item p {
+            color: var(--neutral-beige);
+            opacity: 0.95;
+            font-size: 1rem;
+            line-height: 1.75;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .benefit-icon {
+            flex-shrink: 0;
+            margin-right: var(--spacing-lg);
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            background: rgba(194, 211, 255, 0.15);
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .benefit-list {
+            margin-top: var(--spacing-3xl);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-2xl);
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 992px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .benefits-grid, .benefit-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Amenities Section */
+        .amenities-section {
+            padding: var(--spacing-5xl) 0;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-3xl);
+        }
+
+        .amenity-item {
+            text-align: center;
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            background: var(--neutral-200);
+            transition: transform 0.3s ease;
+        }
+
+        .amenity-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .amenity-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--spacing-lg);
+        }
+
+        .amenity-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .amenity-item h4 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-color);
+            color: var(--neutral-beige);
+            padding: var(--spacing-4xl) 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--spacing-3xl);
+        }
+
+        .footer-section h4 {
+            color: var(--accent-color);
+            margin-bottom: var(--spacing-xl);
+            font-size: 1.25rem;
+        }
+
+        .footer-section p {
+            margin-bottom: var(--spacing-md);
+            opacity: 0.9;
+            font-size: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .footer-section a {
+            color: var(--neutral-beige);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: var(--spacing-3xl);
+            margin-top: var(--spacing-3xl);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.8;
+            font-size: 0.875rem;
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(90deg, 
+                rgba(46, 31, 71, 0.9) 0%,
+                rgba(139, 49, 76, 0.85) 100%);
+            position: relative;
+            overflow: hidden;
+            color: var(--neutral-100);
+            padding: var(--spacing-5xl) 0;
+            text-align: center;
+        }
+
+        .quote-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center,
+                rgba(138, 43, 226, 0.1) 0%,
+                rgba(138, 43, 226, 0) 70%);
+        }
+
+        .quote-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        blockquote {
+            position: relative;
+            z-index: 1;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            font-style: italic;
+            color: var(--neutral-100);
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--spacing-2xl) var(--spacing-2xl);
+            line-height: 1.4;
+        }
+
+        blockquote footer {
+            font-size: 1.25rem;
+            margin-top: var(--spacing-xl);
+            opacity: 0.8;
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: var(--spacing-md) var(--spacing-2xl);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--neutral-100);
+            background: linear-gradient(to right, 
+                #2E3B5B 0%,
+                #566991 100%);
+            border-radius: var(--radius-md);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 960px;
+                padding: 0 var(--spacing-3xl);
+            }
+            
+            .hero-content h1 {
+                font-size: 2.75rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            blockquote {
+                font-size: 2rem;
+            }
+
+            .offerings-container {
+                gap: var(--spacing-xl);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-section .container {
+                flex-direction: column;
+                gap: var(--spacing-xl);
+            }
+            
+            .hero-content, .booking-plugin {
+                max-width: 100%;
+            }
+            
+            .hero-section {
+                min-height: auto;
+                padding: var(--spacing-5xl) 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-2xl);
+            }
+
+            .hero-content {
+                padding: var(--spacing-2xl) var(--spacing-xl);
+            }
+            
+            .header-container {
+                padding: var(--spacing-sm) var(--spacing-xl);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--primary-color);
+                width: 80%;
+                height: calc(100vh - 80px);
+                padding: var(--spacing-xl);
+                transition: right 0.3s ease;
+                gap: var(--spacing-xl);
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.2rem;
+            }
+
+            blockquote {
+                font-size: 1.75rem;
+                padding: var(--spacing-2xl) var(--spacing-xl);
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content p {
+                font-size: 1.2rem;
+            }
+
+            .hero-section .container {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+            
+            .booking-plugin {
+                margin-top: var(--spacing-2xl);
+                padding: var(--spacing-lg);
+            }
+            
+            .booking-option {
+                flex-direction: column;
+                text-align: center;
+                padding: var(--spacing-lg) 0;
+            }
+            
+            .option-price {
+                margin-top: var(--spacing-sm);
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 var(--spacing-xl);
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.125rem;
+            }
+
+            blockquote {
+                font-size: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .amenities-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .step {
+                width: 32px;
+                height: 32px;
+                font-size: 0.875rem;
+                margin: 0 var(--spacing-xs);
+            }
+            
+            .booking-steps::before {
+                width: 60%;
+            }
+        }
+
+        /* Book Again Section */
+        .section[style*="background: linear-gradient"] {
+            background: linear-gradient(135deg, rgba(46, 59, 91, 0.05) 0%, rgba(86, 105, 145, 0.1) 100%) !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Booking Banner -->
+    <div class="booking-banner">
+        CLICK HERE TO BOOK YOUR VISIT <a href="#book">Schedule Now</a>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">
+                <img src="https://plunsana.com/wp-content/uploads/2025/02/P-white-icon.png" alt="Plunsana Logo">
+            </a>
+            <nav class="nav-menu">
+                <a href="/" class="nav-link">Home</a>
+                <a href="#" class="nav-link has-dropdown active">Services</a>
+                <a href="/memberships" class="nav-link">Memberships</a>
+                <a href="/events" class="nav-link">Events</a>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>
+                    GUIDED <span class="highlight">EXPERIENCES</span> AT PLUNSANA
+                </h1>
+                <p>Expert-led sessions designed to maximize the benefits of our sauna, cold plunge, and breathwork modalities. Whether you're a first-timer or an experienced practitioner, guided experiences offer deeper support, education, and results.</p>
+                <a href="#book" class="hero-cta">BOOK YOUR CLASS</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Widget Section (Second Fold) -->
+    <section id="book" class="booking-section section">
+        <div class="container" style="display: flex; justify-content: center;">
+            <!-- Booking Plugin -->
+            <div class="booking-plugin fade-in">
+                <div class="booking-container">
+                    <h2>CURRENT OFFERINGS</h2>
+                    <p class="booking-subtitle">Step 1: Select Your Class</p>
+                    
+                    <div class="booking-steps">
+                        <div class="step active">
+                            <span>1</span>
+                        </div>
+                        <div class="step">
+                            <span>2</span>
+                        </div>
+                        <div class="step">
+                            <span>3</span>
+                        </div>
+                        <div class="step">
+                            <span>4</span>
+                        </div>
+                    </div>
+                    
+                    <div class="booking-options">
+                        <div class="booking-option">
+                            <div class="option-detail">
+                                <h3>Guided Sauna & Cold Plunge</h3>
+                            </div>
+                            <div class="option-price">
+                                $50.00
+                            </div>
+                        </div>
+                        <div class="booking-option">
+                            <div class="option-detail">
+                                <h3>Guided Breathwork Class + Plunsana Amenities</h3>
+                            </div>
+                            <div class="option-price">
+                                $50.00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offerings Section -->
+    <section id="book" class="offerings-section section">
+        <div class="container">
+            <h2 class="section-title">CURRENT OFFERINGS</h2>
+            <p class="section-subtitle">Choose your guided class below!</p>
+            <div class="offerings-container">
+                <div class="offering-card fade-in">
+                    <div class="offering-image">
+                        <img src="https://res.cloudinary.com/dcfv2aml6/image/upload/v1743966881/sauna-bubble_i6lgzq.jpg" alt="Guided Sauna & Cold Plunge">
+                    </div>
+                    <div class="offering-content">
+                        <h3>Guided Sauna & Cold Plunge</h3>
+                        <p>Experience the powerful benefits of contrast therapy under expert guidance. Learn proper techniques, breathing methods, and protocols to maximize your session's effectiveness.</p>
+                        <span class="offering-price">$50.00</span>
+                        <a href="#" class="offering-btn">Book Now</a>
+                    </div>
+                </div>
+                <div class="offering-card fade-in">
+                    <div class="offering-image">
+                        <img src="https://res.cloudinary.com/dcfv2aml6/image/upload/v1743966881/breath-bubble_ftrcdd.jpg" alt="Guided Breathwork Class">
+                    </div>
+                    <div class="offering-content">
+                        <h3>Guided Breathwork Class + Plunsana Amenities</h3>
+                        <p>Discover the transformative power of breathwork with our expert facilitators, followed by access to all Plunsana amenities to enhance your experience.</p>
+                        <span class="offering-price">$50.00</span>
+                        <a href="#" class="offering-btn">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits-section section">
+        <div class="container">
+            <h2 class="section-title" style="color: var(--neutral-beige);">WHY CHOOSE A GUIDED EXPERIENCE AT PLUNSANA?</h2>
+            <p class="section-subtitle" style="color: var(--neutral-beige); opacity: 0.9;"><strong>Unlock the Full Potential of Contrast Therapy & Breathwork</strong><br><br>Whether you're a first-timer or an experienced practitioner, guided experiences offer deeper support, education, and results—allowing you to truly harness the power of these transformational wellness practices.</p>
+            
+            <div class="benefit-list">
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Expert Coaching for Optimal Results</h3>
+                    <p>Our certified instructors provide <strong>personalized guidance</strong> to ensure you get the most out of each session. From <strong>proper breathing techniques</strong> during cold plunges to safe and effective sauna practices, you'll learn how to <strong>enhance recovery, build resilience, and tap into new levels of vitality</strong>.</p>
+                </div>
+                
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Refined Techniques & Breath Control</h3>
+                    <p>Guided classes help you <strong>master breathwork and mindset strategies</strong> that elevate your experience. In our contrast therapy sessions, you'll learn how to use breath to <strong>calm your nervous system</strong>, reduce the "cold shock" response, and stay grounded in the intensity.</p>
+                </div>
+                
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Increased Safety & Comfort</h3>
+                    <p>For those new to contrast therapy, <strong>having a skilled instructor by your side</strong> ensures a safe, comfortable, and effective experience. You'll receive <strong>real-time coaching</strong> on proper breathing, movement, and recovery techniques.</p>
+                </div>
+                
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Deeper Relaxation & Recovery</h3>
+                    <p>With expert guidance, you'll <strong>move through a structured sequence</strong> designed for maximum benefit. Whether it's contrast therapy or breathwork, you'll leave feeling <strong>more grounded, relaxed, and recharged</strong>—with a noticeable boost in mood, clarity, and energy.</p>
+                </div>
+                
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Community & Connection</h3>
+                    <p>Guided classes also offer a chance to <strong>connect with like-minded individuals</strong> in a supportive, uplifting environment. Share the experience, exchange tips, and build meaningful connections with others on their wellness journey.</p>
+                </div>
+                
+                <div class="benefit-item fade-in">
+                    <div class="benefit-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3>Faster Progress + Greater Benefits</h3>
+                    <p>While self-led sessions have their place, guided experiences <strong>unlock deeper benefits, faster results, and lasting transformations</strong>. You'll gain <strong>valuable skills and techniques</strong> that you can carry into your regular practice.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Images Section -->
+    <section class="experience-section section">
+        <div class="container" style="display: flex; gap: var(--spacing-3xl); flex-wrap: wrap; justify-content: center; align-items: center;">
+            <div style="flex: 1; min-width: 300px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+                <img src="https://res.cloudinary.com/dcfv2aml6/image/upload/v1743966881/breath-bubble_ftrcdd.jpg" alt="Breathwork at Plunsana" style="width: 100%; display: block;">
+            </div>
+            <div style="flex: 1; min-width: 300px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+                <img src="https://res.cloudinary.com/dcfv2aml6/image/upload/v1743966881/sauna-bubble_i6lgzq.jpg" alt="Group Sauna session at Plunsana" style="width: 100%; display: block;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section (Repositioned from below) -->
+    <section class="amenities-section section" style="background: linear-gradient(135deg, rgba(46, 59, 91, 0.05) 0%, rgba(86, 105, 145, 0.1) 100%);">
+        <div class="container">
+            <h2 class="section-title">OUR Amenities</h2>
+            <p class="section-subtitle">Discover everything you need to feel completely renewed and refreshed before you leave.</p>
+            <div class="amenities-grid">
+                <div class="amenity-item fade-in">
+                    <div class="amenity-icon">
+                        <img src="https://plunsana.com/wp-content/uploads/2023/08/icons-04.png" alt="Sauna Icon">
+                    </div>
+                    <h4>SAUNA</h4>
+                </div>
+                <div class="amenity-item fade-in">
+                    <div class="amenity-icon">
+                        <img src="https://plunsana.com/wp-content/uploads/2023/08/icons-06.png" alt="Cold Plunges Icon">
+                    </div>
+                    <h4>COLD PLUNGES</h4>
+                </div>
+                <div class="amenity-item fade-in">
+                    <div class="amenity-icon">
+                        <img src="https://plunsana.com/wp-content/uploads/2023/08/icons-05.png" alt="Red Light Wall Icon">
+                    </div>
+                    <h4>RED LIGHT WALL</h4>
+                </div>
+                <div class="amenity-item fade-in">
+                    <div class="amenity-icon">
+                        <img src="https://plunsana.com/wp-content/uploads/2023/08/icons-07.png" alt="Breathwork Area Icon">
+                    </div>
+                    <h4>BREATHWORK AREA</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="fade-in">
+                "Cold is a stressor, so if you can get into the cold and control your body's response to it, you will be able to control stress."
+                <footer>– WIM HOF</footer>
+            </blockquote>
+            
+            <div style="text-align: center; margin-top: var(--spacing-3xl);">
+                <a href="#book" class="cta-button">
+                    <span>SCHEDULE YOUR VISIT</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Info</h4>
+                    <p><strong>Email:</strong> info@plunsana.com</p>
+                    <p><strong>Phone:</strong> 727.405.8853</p>
+                    <p><strong>Location:</strong> 2300 26th St N. St. Petersburg FL.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hours</h4>
+                    <p><strong>Monday – Friday</strong><br>
+                    7 AM – 1 PM | 5 PM – 8 PM</p>
+                    <p><strong>Saturday & Sunday</strong><br>
+                    8 AM – 1 PM</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="/guided-classes" class="active">Guided Classes</a></li>
+                        <li><a href="/private-sessions">Private Sessions</a></li>
+                        <li><a href="/sauna">Sauna</a></li>
+                        <li><a href="/cold-plunge">Cold Plunge</a></li>
+                        <li><a href="/breathwork">Breathwork</a></li>
+                        <li><a href="/red-light-therapy">Red Light Therapy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow</h4>
+                    <ul>
+                        <li><a href="#" target="_blank">Instagram</a></li>
+                        <li><a href="#" target="_blank">Facebook</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                © 2024 Plunsana – Sauna • Cold Plunge • Breathwork | All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Add necessary JavaScript for mobile menu functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            mobileMenuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+            });
+
+            // Close menu when clicking a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileMenuBtn.textContent = '☰';
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
